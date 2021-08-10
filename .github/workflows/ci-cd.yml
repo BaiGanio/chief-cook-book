@@ -1,10 +1,15 @@
 name: Prod CI/CD (Build & Deploy)...
 
 on:
-   # Trigger the workflow on push or pull request,
-  # but only for the master branch!
- push:
+  # Triggers the workflow on push or pull request events but only for the master branch
+  push:
     branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+      
 jobs:
   build:
     runs-on: ubuntu-latest
